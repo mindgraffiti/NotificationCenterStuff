@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFA6E728173080B300D6F323 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFA6E726173080B300D6F323 /* ScrollViewController.m */; };
+		AFA6E729173080B300D6F323 /* ScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFA6E727173080B300D6F323 /* ScrollViewController.xib */; };
+		AFA6E72C173081F500D6F323 /* scooby-doo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFA6E72B173081F500D6F323 /* scooby-doo.jpg */; };
 		AFC73450172F3AFA00A128FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC7344F172F3AFA00A128FF /* UIKit.framework */; };
 		AFC73452172F3AFA00A128FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC73451172F3AFA00A128FF /* Foundation.framework */; };
 		AFC73454172F3AFA00A128FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFC73453172F3AFA00A128FF /* CoreGraphics.framework */; };
@@ -22,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AFA6E725173080B300D6F323 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		AFA6E726173080B300D6F323 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		AFA6E727173080B300D6F323 /* ScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollViewController.xib; sourceTree = "<group>"; };
+		AFA6E72B173081F500D6F323 /* scooby-doo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "scooby-doo.jpg"; sourceTree = "<group>"; };
 		AFC7344C172F3AFA00A128FF /* NotificationCenterStuff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationCenterStuff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC7344F172F3AFA00A128FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFC73451172F3AFA00A128FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -56,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFA6E72A173081D900D6F323 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				AFA6E72B173081F500D6F323 /* scooby-doo.jpg */,
+			);
+			name = imgs;
+			sourceTree = "<group>";
+		};
 		AFC73443172F3AFA00A128FF = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +101,12 @@
 		AFC73455172F3AFA00A128FF /* NotificationCenterStuff */ = {
 			isa = PBXGroup;
 			children = (
+				AFA6E72A173081D900D6F323 /* imgs */,
 				AFC7345E172F3AFA00A128FF /* AppDelegate.h */,
 				AFC7345F172F3AFA00A128FF /* AppDelegate.m */,
+				AFA6E725173080B300D6F323 /* ScrollViewController.h */,
+				AFA6E726173080B300D6F323 /* ScrollViewController.m */,
+				AFA6E727173080B300D6F323 /* ScrollViewController.xib */,
 				AFC73471172F3C1C00A128FF /* MyObject.h */,
 				AFC73472172F3C1C00A128FF /* MyObject.m */,
 				AFC73456172F3AFA00A128FF /* Supporting Files */,
@@ -168,6 +187,8 @@
 				AFC73464172F3AFA00A128FF /* Default@2x.png in Resources */,
 				AFC73466172F3AFA00A128FF /* Default-568h@2x.png in Resources */,
 				AFC73470172F3B1100A128FF /* ViewController.xib in Resources */,
+				AFA6E729173080B300D6F323 /* ScrollViewController.xib in Resources */,
+				AFA6E72C173081F500D6F323 /* scooby-doo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +203,7 @@
 				AFC73460172F3AFA00A128FF /* AppDelegate.m in Sources */,
 				AFC7346F172F3B1100A128FF /* ViewController.m in Sources */,
 				AFC73473172F3C1C00A128FF /* MyObject.m in Sources */,
+				AFA6E728173080B300D6F323 /* ScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +318,7 @@
 				AFC7346B172F3AFA00A128FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

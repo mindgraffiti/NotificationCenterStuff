@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "MyObject.h"
+#import "ScrollViewController.h"
 
 @interface AppDelegate()
 //@property (strong, nonatomic) MyObject *myObject;
@@ -26,8 +27,11 @@
         [self.myArray addObject:[[MyObject alloc] init]];
     }
     
-    // self.myObject = [[MyObject alloc] init];
+    //self.myObject = [[MyObject alloc] init];
     ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:[NSBundle mainBundle]];
+    
+    // explore Scroll View a bit more.
+    //ScrollViewController *viewController = [[ScrollViewController alloc] initWithNibName:@"ScrollViewController" bundle:[NSBundle mainBundle]];
     self.window.rootViewController = viewController;
     
     self.window.backgroundColor = [UIColor whiteColor];
