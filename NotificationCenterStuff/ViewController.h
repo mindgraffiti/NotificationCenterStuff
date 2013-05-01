@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UIScrollViewDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate>
 - (IBAction)buttonPressed:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;

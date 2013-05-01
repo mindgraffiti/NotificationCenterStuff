@@ -25,7 +25,16 @@
     }]; */
     
     // this is the listener for the event where we see the keyboard
-    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardDidShowNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        
+        NSLog(@"%@",[note userInfo]);
+        /* Now I want to give space to the keyboard, 
+           and use a scrollView for the rest of the screen space. */
+        // Let's pull the user's device info. Stuff it in a dictionary.
+        NSDictionary *userInfo = [note userInfo];
+        // let's save the keyboard info. Now we can refer to it to size the frame!
+        CGRect keyboardRect = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+        
         NSLog(@"keyboard shown");
         // Now we want to scroll the view. So why doesn't this work?
         // self.myScrollView.frame.size.height = 10;
@@ -34,13 +43,19 @@
         // so instead, let's assign a new frame.
         CGRect frame = self.myScrollView.frame;
         // and manipulate the frame
-        frame.size.height = frame.size.height / 2;
+        frame.size.height -= keyboardRect.size.height;
         self.myScrollView.frame = frame;
     }];
     
     // this is the listener for the event where we hid the keyboard
     [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
-        //[self.view endEditing:YES];
+        
+        // so now that the keyboard is dismissing, let's redraw the scrollView area to its original size
+        NSDictionary *userInfo = [note userInfo];
+        CGRect keyboardRect = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+        CGRect frame = self.myScrollView.frame;
+        frame.size.height += keyboardRect.size.height;
+        self.myScrollView.frame = frame;
         NSLog(@"keyboard hidden");
     }];
     
@@ -73,6 +88,13 @@
     // self.myScrollView.contentSize = self.myScrollView.frame.size;
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    // dismiss the keyboard when the textfield is no longer the main focus
+    [textField resignFirstResponder];
+    
+    return NO;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
